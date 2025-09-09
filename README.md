@@ -51,7 +51,8 @@ ddev launch
 
 ### 2.1 Install plugins available on WPackagist
 
-```bash
+i.e.
+```
 ddev composer require wpackagist-plugin/advanced-custom-fields
 ddev wp plugin activate advanced-custom-fields
 ```
@@ -140,10 +141,14 @@ add_filter('acf/settings/load_json', fn($paths) => array_merge($paths, [__DIR__ 
 
 ## 4. Custom Post Types (CPTs)
 
-**Recommended approach:**
+```
+ddev composer require wpackagist-plugin/custom-post-type-ui
+ddev wp plugin activate custom-post-type-ui
+```
 
 * Use **CPT UI** plugin to define post types via the admin.
-* Export the PHP code from CPT UI → paste it into `mu-plugins/site-config.php`.
+* Export the PHP code from CPT UI → paste it into `mu-plugins/`.
+* Recommended to add its custom post type to new php files in `mu-plugins/`.
 * Commit the file to Git.
 
 This ensures:
@@ -154,7 +159,10 @@ This ensures:
 ---
 
 ## 5. Advanced Custom Fields (ACF) JSON
-
+```
+ddev composer require wpackagist-plugin/advanced-custom-fields
+ddev wp plugin activate advanced-custom-fields
+```
 * Enable **Local JSON** to store field groups as JSON files:
 
 ```php
@@ -189,7 +197,7 @@ wp core install \
 * **Activate plugins:**
 
 ```bash
-wp plugin activate --all
+ddev wp plugin activate --all
 ```
 
 > **Note:** Only content (posts, pages, users) lives in the DB. Config (CPTs, ACF, essential plugins) is versioned in Git.
@@ -203,7 +211,7 @@ wp plugin activate --all
 3. Use **WP-CLI** for plugin activation, DB export/import, and other automated tasks.
 4. Keep ACF JSON and CPT config in `mu-plugins` for reproducible setup.
 5. Avoid manual changes in WP Admin for configuration that should be shared.
-
+6. Use ```ddev exec ./vendor/bin/pint``` to keep the code style consistent.
 ---
 
 ## 8. Quick Startup for New Developers

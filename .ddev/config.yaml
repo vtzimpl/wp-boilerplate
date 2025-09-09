@@ -1,4 +1,4 @@
-name: wp-boilerplate
+name: ergo-test
 type: wordpress
 docroot: web
 php_version: "8.3"
