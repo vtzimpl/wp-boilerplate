@@ -7,4 +7,10 @@
  */
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 require_once dirname(__DIR__) . '/config/application.php';
+/**
+ * You need to add the JWT secret key to this file(and just before settings).
+ */
+defined('JWT_AUTH_SECRET_KEY') || define('JWT_AUTH_SECRET_KEY', '4vX*#K9q2!p@L7bZfS$');
+defined('JWT_AUTH_CORS_ENABLE') || define('JWT_AUTH_CORS_ENABLE', true);
 require_once ABSPATH . 'wp-settings.php';
+

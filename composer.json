@@ -41,7 +41,9 @@
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfive": "^1.0",
     "wpackagist-plugin/advanced-custom-fields": "^6.5",
-    "wpackagist-plugin/custom-post-type-ui": "^1.18"
+    "wpackagist-plugin/custom-post-type-ui": "^1.18",
+    "wpackagist-plugin/elementor": "^3.31",
+    "wpackagist-plugin/jwt-authentication-for-wp-rest-api": "^1.4"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
